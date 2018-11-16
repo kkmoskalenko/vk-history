@@ -10,7 +10,7 @@ class VkHelper:
         self.session = vk.Session(access_token=access_token)
         self.api = vk.API(self.session, v='5.87')
 
-    def get_peers_ids(self, exclude):
+    def get_peers_ids(self, exclude=[]):
         peers_ids = []
         conversations_count = self.api('messages.getConversations',count=0)['count']
         
